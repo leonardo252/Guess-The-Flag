@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showScore))
+        
         
 //        askQuestion(action: nil)
         askQuestion()
@@ -94,8 +96,14 @@ class ViewController: UIViewController {
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
             present(ac, animated: true)
         }
-        
-        
+    }
+    
+    @objc func showScore() {
+        let scoreToShow = "My total score is \(score)"
+        let vc = UIActivityViewController(activityItems: [scoreToShow], applicationActivities: [])
+//        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    
     }
     
 }
