@@ -71,16 +71,16 @@ class ViewController: UIViewController {
         var message: String
         
         if sender.tag == correctAnswer {
-            title = "Correct"
-            message = "Your score is \(score)"
+            title = "It's Correct"
+            message = "Now your score is \(score)"
             score += 1
         } else {
-            title = "Wrong"
+            title = "Oh no, it'sWrong"
             message = "This flgas is from \(countries[sender.tag].uppercased()).\nYour score is \(score)"
             score -= 1
         }
         
-        if totalQuestions == 10 {
+        if totalQuestions == 15 {
             let finalManssage = "Afeter 10 questions, your score is \(score)"
             
             let final = UIAlertController(title: "Finished!", message: finalManssage, preferredStyle: .actionSheet)
